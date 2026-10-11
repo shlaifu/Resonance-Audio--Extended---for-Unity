@@ -193,7 +193,7 @@ The plugin is built from upstream Resonance Audio plus [`Native/per_source_refle
 This project is licensed under the **Apache License 2.0** (see [`LICENSE`](LICENSE)).
 
 - The five modified Resonance Audio scripts remain © Google Inc. under Apache-2.0. Each one carries a modification notice, and changes are marked `PATCH`.
-- New files are © 2026 Christian Schlaeffer.
+- New files are CC0.
 
 The native plugins bundle third-party code. Their licenses are in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and [`licenses/`](licenses/).
 
