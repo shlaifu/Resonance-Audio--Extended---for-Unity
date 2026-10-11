@@ -1,0 +1,39 @@
+Resonance Audio for Unity - Extended
+Copyright 2026 Christian Schlaeffer
+
+This product includes software developed by Google Inc.:
+  Resonance Audio            https://github.com/resonance-audio/resonance-audio
+  Resonance Audio SDK for Unity  https://github.com/resonance-audio/resonance-audio-unity-sdk
+Copyright 2017-2018 Google Inc. Licensed under the Apache License, Version 2.0.
+
+Modified Google files (2026, Christian Schlaeffer)
+--------------------------------------------------
+C# (Resonance Audio SDK for Unity) - changes are marked "PATCH" in the source:
+  Assets/ResonanceAudio/Scripts/ResonanceAudio.cs
+    - Listener re-resolved when the cached AudioListener is destroyed/disabled.
+    - Volumetric occlusion (several rays to a disc around the source), triggers ignored,
+      sample points kept in free space.
+    - UpdateReverbProbe(probe, reflectivity) overload used by ResonanceReverbGrid.
+    - Reverb-baking functions loaded from "resonanceaudiobake" (renamed stock plugin).
+    - PushListenerTransform / SetListenerTransformFromScript import.
+  Assets/ResonanceAudio/Scripts/ResonanceAudioSource.cs
+    - Occlusion response and level drop (ResonanceOcclusion), air absorption
+      (ResonanceAirAbsorption), distance-dependent reverb send (ResonanceReverbGrid),
+      "Room Effects Send (dB)" trim.
+  Assets/ResonanceAudio/Editor/ResonanceAudioSourceEditor.cs
+    - Directivity preview uses its own texture instead of drawing into
+      Texture2D.blackTexture; draws the Room Effects Send field.
+  Assets/ResonanceAudio/Editor/ResonanceAudioReverbComputer.cs
+    - Also bakes every ResonanceReverbGrid in the scene.
+  Assets/ResonanceAudio/Editor/ResonanceAudioReverbBakingWindow.cs
+    - Bake button enabled when reverb grids exist.
+
+C++ (Resonance Audio) - see Native/per_source_reflections.patch:
+  resonance_audio/CMakeLists.txt, resonance_audio/graph/graph_manager.{h,cc},
+  platforms/unity/unity_nativeaudioplugins.{h,cc}
+    - Per-source early reflections; listener pose settable from script.
+  New: resonance_audio/dsp/image_source_reflections.*,
+       resonance_audio/graph/per_source_reflections_node.*, and their tests.
+
+The binary plugins in Assets/ResonanceAudio/Plugins/x86_64/ additionally contain
+third-party code; see THIRD_PARTY_NOTICES.md and the licenses/ folder.

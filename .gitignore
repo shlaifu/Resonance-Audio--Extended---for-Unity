@@ -1,0 +1,2 @@
+# Unity creates these when the Assets folder is used as a project overlay
+*.meta

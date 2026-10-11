@@ -1,0 +1,11 @@
+{
+  global:
+    SetListenerGain;
+    SetListenerStereoSpeakerMode;
+    SetListenerTransformFromScript;
+    SetRoomProperties;
+    StartSoundfieldRecorder;
+    StopSoundfieldRecorderAndWriteToFile;
+    UnityGetAudioEffectDefinitions;
+  local: *;
+};

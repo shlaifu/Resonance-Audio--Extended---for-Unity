@@ -1,0 +1,7 @@
+* text=auto
+*.cs   text eol=lf
+*.md   text eol=lf
+*.sh   text eol=lf
+*.dll  binary
+*.so   binary
+*.patch -text
